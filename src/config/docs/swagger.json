@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "API de manipulação de um pdv",
-        "description": "Essa api tem como objetivo a manipulação de um pdv de uma loja.",
+        "title": "API para gestão de dispensas e receitas",
+        "description": "Essa api tem como finalidade gerir receitas e despesas de um usuario",
         "termsOfService": "http://localhost:3000/terms",
         "contact": {
             "email": "luan.nsct@gmail.com"
