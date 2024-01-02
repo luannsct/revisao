@@ -24,6 +24,23 @@ const validarCadastro = async (req, res, next) => {
     }
 }
 
+const validarCorpoRequisicaoLogin = (esquema) => {
+    return async (req, res, next) => {
+        try {
+            await esquema.validateAsync(req.body)
+            req.usuario = {
+                id: 1,
+                nome: 'Luan',
+                email: 'luan.nsct@gmail.com'
+            }
+            next()
+        } catch (error) {
+            return res.status(400).json({ erro: error.message })
+        }
+
+    }
+}
+
 const validarLoginUsuario = async (req, res, next) => {
     const { email, senha } = req.body;
     if (!email || !senha) {
@@ -50,4 +67,4 @@ const validarLoginUsuario = async (req, res, next) => {
 }
 
 
-module.exports = { validarLoginUsuario, validarCadastro }
+module.exports = { validarLoginUsuario, validarCadastro, validarCorpoRequisicaoLogin }
